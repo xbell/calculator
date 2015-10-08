@@ -1,7 +1,7 @@
 puts "Hello, I'm a calculator.  What operation would you like to perform? Or type the symbol used in your operation."
 
-  command = ""
-  until command == "exit"
+command = ""
+until command == "exit"
 
   command = gets.chomp
 
@@ -15,25 +15,34 @@ puts "Hello, I'm a calculator.  What operation would you like to perform? Or typ
     puts "Okay, you want to divide."
   elsif command.downcase == "modulo" || command == "%"
     puts "Okay, you want to find the modulo."
-  elsif command.downcase == "exponentiation" || command == "^"
-    puts "Okay, you want to find the exponential product of two numbers."
   elsif command.downcase == "exit"
     puts "Okay, bye!"
+    exit
   else
-    puts "I don't know how to #{command}"
+    puts "I don't know how to #{command}."
+    exit
   end
 
+  puts "Type in the first number."
+  first_input = gets.chomp
+
+  puts "Type in the second number."
+  second_input = gets.chomp
 
   if command.downcase == "addition" || command == "+"
-    puts "Type in the math problem."
+    print "The answer is ", + first_input.to_i + second_input.to_i,"."
   elsif command.downcase == "subtraction" || command == "-"
-    puts "Type in the math problem."
+    print "The answer is ", + first_input.to_i - second_input.to_i,"."
   elsif command.downcase == "multiplication" || command == "*"
-    puts "Type in the math problem."
+    print "The answer is ", + first_input.to_i * second_input.to_i,"."
   elsif command.downcase == "division" || command == "/"
-    puts "Type in the math problem."
+    print "The answer is ", + first_input.to_i / second_input.to_i,"."
   elsif command.downcase == "modulo" || command == "%"
-    puts "Type in the math problem."
-  elsif command.downcase == "exponentiation" || command == "^"
-    puts "Type in the math problem."
+    print "The answer is ", + first_input.to_i % second_input.to_i,"."
   end
+
+  puts ""
+  puts "Type what operation you would like to perform next. Or type the symbol used in your operation. If you're all done then type \"exit\"."
+
+
+end
