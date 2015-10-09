@@ -15,12 +15,15 @@ until command == "exit"
     puts "Okay, you want to divide."
   elsif command.downcase == "modulo" || command == "%"
     puts "Okay, you want to find the modulo."
+  elsif command.downcase == "exponentiation" || command == "**"
+    puts "Okay, you want to perform an exponential equation."
   elsif command.downcase == "exit"
     puts "Okay, bye!"
     exit
   else
     puts "I don't know how to #{command}."
-    exit
+    puts "Try again."
+    next
   end
 
   puts "Type in the first number."
@@ -39,6 +42,8 @@ until command == "exit"
     print "The answer is ", + first_input.to_i / second_input.to_i,"."
   elsif command.downcase == "modulo" || command == "%"
     print "The answer is ", + first_input.to_i % second_input.to_i,"."
+  elsif command.downcase == "exponentiation" || command == "**"
+    print "The answer is ", + first_input.to_i ** second_input.to_i,"."
   end
 
   puts ""
